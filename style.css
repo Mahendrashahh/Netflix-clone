@@ -124,42 +124,20 @@ nav button {
 
 .card-container {
     display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+    overflow: auto;
     gap: 20px;
     padding: 20px 10px;
 }
 
-/* Buttons container ke upar hone chahiye */
-.slide-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 99;
-    font-size: 2rem;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 50%;
-}
 
-.slide-btn.left {
-    left: 10px;
-}
-
-.slide-btn.right {
-    right: 10px;
-}
 
 .card-container {
     display: flex;
     gap: 20px;
-    overflow-x: hidden;
+    overflow:auto;
     padding: 20px 30px;
     position: relative;
-    scroll-behavior: smooth;
+
     width: 80%;
     margin-left: 100px;
 
