@@ -161,7 +161,7 @@ nav button {
     position: relative;
     scroll-behavior: smooth;
     width: 80%;
-    margin-left: 100px ;
+    margin-left: 100px;
 
 }
 
@@ -882,6 +882,8 @@ Desktop: 961px and above (base styles already set)
     .card-container {
         padding: 10px;
         gap: 10px;
+        margin-left: 10px;
+        overflow: auto;
     }
 
     .card img {
