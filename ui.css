@@ -73,6 +73,7 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         margin-bottom: 40px;
+        margin-left: 20px;
     }
 
     .video-card {
