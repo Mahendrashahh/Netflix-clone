@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/png" href="images/fvicon.png">
+
+
+</head>
+<style>
+    body {
+        background: black;
+        color: white;
+    }
+
+    h1 {
+        font-size: 54px;
+        font-weight: 400;
+        font-family: system-ui;
+        text-align: center;
+        align-items: center;
+        margin-top: 150px;
+    }
+
+    .img-row {
+        display: flex;
+        gap: 70px;
+        justify-content: center;
+        align-items: flex-end;
+        text-align: center;
+        margin-top: 180px;
+    }
+
+    .img-row img {
+        width: 170px;
+        height: 170px;
+        border-radius: 5%;
+
+    }
+
+    .img-row img:hover {
+        border: white 4px solid;
+        box-sizing: border-box;
+
+    }
+
+    .one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: -120px;
+        margin-left: -40px;
+    }
+
+    .one p {
+        font-size: 24px;
+        font-weight: 400;
+        font-family: system-ui;
+        margin-top: 3px;
+        color: dimgray;
+        height: 100%;
+        width: 100%;
+    }
+
+
+
+
+    .plus-button {
+        width: 80px;
+        height: 80px;
+        background-color: #777;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-bottom: 0;
+        margin-left: 170px;
+        margin-top: -283px;
+        transition: background 0.2s;
+        position: absolute;
+
+    }
+
+    .plus-button:hover {
+        background: white;
+        height: 170px;
+        width: 170px;
+        border-radius: 5%;
+    }
+
+    .manage-btn {
+        display: block;
+        margin: 40px auto 0 auto;
+        padding: 12px 36px;
+        background: none;
+        border: 2px solid #888;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 1.2rem;
+        font-family: system-ui;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .manage-btn:hover {
+        background: #fff;
+        color: #111;
+        border-color: #fff;
+    }
+
+    .plus-icon {
+        position: relative;
+        width: 24px;
+        height: 24px;
+    }
+
+
+
+    .plus-icon::before,
+    .plus-icon::after {
+        content: '';
+        position: absolute;
+        background-color: black;
+        width: 24px;
+        height: 24px;
+    }
+
+    .plus-icon::before {
+        width: 100%;
+        height: 6px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+
+    }
+
+    .plus-icon::after {
+        width: 6px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+
+    }
+
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 40px;
+            margin-top: 100px;
+        }
+
+        .img-row {
+            margin-left: 60px;
+        }
+
+        .img-row img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+        }
+
+        .img-box p {
+            font-size: 18px;
+            margin-top: -228px;
+            color: white;
+            margin-left: 26px;
+        }
+
+        
+    }
+</style>
+
+
+
+<body>
+    <h1>Who's watching ?</h1>
+    <div class="img-row">
+        <div class="one " tabindex="0" data-profile="you">
+            <img src="images/landpage/i-1.png" alt="Who's watching?">
+            <p>you</p>
+        </div>
+        <div class="one " tabindex="0" data-profile="you">
+            <img src="images/landpage/i-2.png" alt="Who's watching?">
+            <p>children</p>
+        </div>
+
+        <div class="one " tabindex="0" data-profile="you">
+            <div class="plus-button">
+                <div class="plus-icon">
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <button class="manage-btn" id="manageBtn">Manage Profiles</button>
+
+
+    </section>
+
+    <script>
+        // Make profile images alive: redirect to ui.html on click or Enter/Space
+        document.querySelectorAll('.one').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                // Only redirect for real profiles (not plus button)
+                if (btn.querySelector('img')) {
+                    window.location.href = 'ui.html';
+                }
+            });
+            btn.addEventListener('keypress', function (e) {
+                if ((e.key === 'Enter' || e.key === ' ') && btn.querySelector('img')) {
+                    window.location.href = 'ui.html';
+                }
+            });
+        });
+        document.getElementById('manageBtn').addEventListener('click', function () {
+            alert('Manage Profiles (Demo action)');
+        });
+    </script>
+
+
+</body>
+
+</html>

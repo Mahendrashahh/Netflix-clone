@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-netflix</title>
+    <link rel="icon" type="image/png" href="images/fvicon.png">
+    <link rel="stylesheet" href="ui.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <!-- Left: Logo and links -->
+        <div class="navbar-left">
+            <img src="images/nt.png" alt="Netflix Logo" class="navbar-logo">
+            <a href="#" class="navbar-link">Home</a>
+            <a href="#" class="navbar-link">TV Shows</a>
+            <a href="#" class="navbar-link">Movies</a>
+           
+        </div>
+        <!-- Right: Search, Children, Profile -->
+        <div class="navbar-right">
+            <!-- Search Icon -->
+            <button class="search-btn">
+                <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+            </button>
+            <span class="children-label">Children</span>
+            <!-- Profile Dropdown -->
+            <div id="profileDropdown" class="profile-dropdown">
+                <img src="images/landpage/i-1.png" alt="Profile" class="profile-img">
+                <div id="dropdownMenu" class="dropdown-menu">
+                    <a href="#" class="dropdown-item">Manage Profiles</a>
+                    <a href="#" class="dropdown-item">Help Center</a>
+                    <a href="#" class="dropdown-item">Account</a>
+                    <a href="#" class="dropdown-item">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+        // Profile dropdown logic
+        const profileImg = document.querySelector('#profileDropdown .profile-img');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        profileImg.addEventListener('click', function (e) {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            e.stopPropagation();
+        });
+        document.addEventListener('click', function () {
+            dropdownMenu.style.display = 'none';
+        });
+        dropdownMenu.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    </script>
+
+    <div class="container">
+        <div class="vedio-container">
+            <div class="firstimg">
+            <img src="images/landpage/i-4.webp" alt="Hero" class="hero-img">
+        </div>
+        </div>
+    </div>
+
+    <div class="overlay">
+        <div class="img-box">
+            <img src="images/landpage/i-5.webp" alt="overlay image">
+
+            <p>What Defines a Happy Life? <br>in jeju Ae-sun rids life up and dwon </p>
+        </div>
+        <div class="hero-content">
+
+            <div class="hero-buttons">
+                <button class="hero-btn play-btn">
+                    <svg width="24" height="24" fill="#000" viewBox="0 0 24 24"
+                        style="vertical-align:middle; margin-right:8px;">
+                        <path d="M6 4l20 8-20 8z" />
+                    </svg>
+                    Play
+                </button>
+                <button class="hero-btn info-btn">
+                    <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"
+                        style="vertical-align:middle; margin-right:8px;">
+                        <circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="2" fill="none" />
+                        <rect x="11" y="10" width="2" height="6" fill="#fff" />
+                        <rect x="11" y="7" width="2" height="2" fill="#fff" />
+                    </svg>
+                    More Info
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="heding">
+        <h4>Tv show's & Movie</h4>
+    </div>
+    <section class="vedio">
+
+
+
+
+
+        <div id="video1">
+            <div class="video-card" data-video-id="bfoj6eoVqEE">
+                <img src="images/landpage/t-1.png" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+
+        </div>
+        <div id="video2">
+             <div class="video-card" data-video-id="d68l6CRI0fM">
+                <img src="images/landpage/t-2.png" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video3">
+             <div class="video-card" data-video-id="JqX0ttWoWYY">
+                <img src="images/landpage/t-3.png" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video4">
+            <div class="video-card" data-video-id="vYnx4622NoU">
+                <img src="images/landpage/t-4.png" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video5">
+             <div class="video-card" data-video-id="9FHiGIA3Hx4">
+                <img src="images/landpage/t-5.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video6">
+            <div class="video-card" data-video-id="tpsnWtCSODI">
+                <img src="images/landpage/t-6.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video7">
+            <div class="video-card" data-video-id="-N78nqv0WDg">
+                <img src="images/landpage/t-7.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        
+    </section>
+
+    <!--second section-->
+    <div class="heding">
+        <h5>Romantic movie </h5>
+    </div>
+
+<section class="vedio">
+     
+        <div id="video1">
+            <div class="video-card" data-video-id="8vIP9RVSP3M">
+                <img src="images/landpage/t-8.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+
+        </div>
+        <div id="video2">
+             <div class="video-card" data-video-id="YtgOkTIOx7U">
+                <img src="images/landpage/t-9.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video3">
+             <div class="video-card" data-video-id="pKQ8ildXr3E">
+                <img src="images/landpage/t-10.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video4">
+            <div class="video-card" data-video-id="zzhfvt5vZHI">
+                <img src="images/landpage/t-11.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video5">
+             <div class="video-card" data-video-id="fDjyEwWfPQg">
+                <img src="images/landpage/t-12.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video6">
+            <div class="video-card" data-video-id="q8oetlSoSZg">
+                <img src="images/landpage/t-13.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video7">
+            <div class="video-card" data-video-id="XexrdFoFWEw">
+                <img src="images/landpage/t-14.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        
+    </section>
+
+
+
+    <!--third section-->
+    <div class="heding">
+        <h5>Funny movie </h5>
+    </div>
+
+<section class="vedio">
+     
+        <div id="video1">
+            <div class="video-card" data-video-id="taVWqbckO8k">
+                <img src="images/landpage/t-15.jpg"class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+
+        </div>
+        <div id="video2">
+             <div class="video-card" data-video-id="sJVb7pPP4qw">
+                <img src="images/landpage/t-16.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video3">
+             <div class="video-card" data-video-id="vBBhGe_h57s">
+                <img src="images/landpage/t-17.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video4">
+            <div class="video-card" data-video-id="UBKWe__jnfo">
+                <img src="images/landpage/t-18.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video5">
+             <div class="video-card" data-video-id="lIIvFgwREsI">
+                <img src="images/landpage/t-19.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video6">
+            <div class="video-card" data-video-id="vwRitSa5suE">
+                <img src="images/landpage/t-20.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video7">
+            <div class="video-card" data-video-id="xc1NCggPkZE">
+                <img src="images/landpage/t-21.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        
+    </section>
+
+
+
+
+
+
+
+     <!--third section-->
+    <div class="heding">
+        <h5>Best Horro Movie For You</h5>
+    </div>
+
+<section class="vedio">
+     
+        <div id="video1">
+            <div class="video-card" data-video-id="H9BjynROcgI">
+                <img src="images/landpage/t-22.jpg"class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+
+        </div>
+        <div id="video2">
+             <div class="video-card" data-video-id="wlTeJRfUA4w">
+                <img src="images/landpage/t-23.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video3">
+             <div class="video-card" data-video-id="-CzTXFzx3uA">
+                <img src="images/landpage/t-24.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video4">
+            <div class="video-card" data-video-id="f6nV1oIXuFA">
+                <img src="images/landpage/t-25.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video5">
+             <div class="video-card" data-video-id="aA9y1a25OnU">
+                <img src="images/landpage/t-26.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video6">
+            <div class="video-card" data-video-id="i9I59bvJnNk">
+                <img src="images/landpage/t-27.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video7">
+            <div class="video-card" data-video-id="ai304KD-bk8">
+                <img src="images/landpage/t-28.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    
+     <!--fourth section-->
+    <div class="heding">
+        <h5>Best Action movie For You</h5>
+    </div>
+
+<section class="vedio">
+     
+        <div id="video1">
+            <div class="video-card" data-video-id="gKizDojsdvs">
+                <img src="images/landpage/t-29.jpg"class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+
+        </div>
+        <div id="video2">
+             <div class="video-card" data-video-id="HbEV2n65qD8">
+                <img src="images/landpage/t-30.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video3">
+             <div class="video-card" data-video-id="HLofa9eEou0">
+                <img src="images/landpage/t-31.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video4">
+            <div class="video-card" data-video-id="ZQZ-O-XIL7o">
+                <img src="images/landpage/t-32.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video5">
+             <div class="video-card" data-video-id="mW0G9W4ZE1c">
+                <img src="images/landpage/t-33.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video6">
+            <div class="video-card" data-video-id="HyFr3CO90wE">
+                <img src="images/landpage/t-34.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video7">
+            <div class="video-card" data-video-id="SQ4QCLEF5sg">
+                <img src="images/landpage/t-35.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+       <!--fifth section-->
+    <div class="heding">
+        <h5>Best Motivational movie For You</h5>
+    </div>
+
+<section class="vedio">
+     
+        <div id="video1">
+            <div class="video-card" data-video-id="XJHjEG6Qwm4">
+                <img src="images/landpage/t-36.jpg"class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+
+        </div>
+        <div id="video2">
+             <div class="video-card" data-video-id="qky1I3a2e0Q">
+                <img src="images/landpage/t-37.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video3">
+             <div class="video-card" data-video-id="cINYT2w7SEo">
+                <img src="images/landpage/t-38.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video4">
+            <div class="video-card" data-video-id="izXUSd2GsGo">
+                <img src="images/landpage/t-39.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video5">
+             <div class="video-card" data-video-id="zXhwNQ70YYc">
+                <img src="images/landpage/t-40.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video6">
+            <div class="video-card" data-video-id="IGTyE1H3d4A">
+                <img src="images/landpage/t-41.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+        <div id="video7">
+            <div class="video-card" data-video-id="fxLLL0WwfYI">
+                <img src="images/landpage/t-42.jpg" class="thumbnail" />
+                <div class="play-button">▶</div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+<!-- बाकी का पूरा HTML content -->
+
+<script>
+  // Sabhi video cards pr apply hoga
+  document.querySelectorAll('.video-card').forEach(function (card) {
+    const playBtn = card.querySelector('.play-button');
+    playBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+
+      // Agar already iframe hai, to return
+      if (card.querySelector('iframe')) return;
+
+      const videoId = card.getAttribute('data-video-id');
+      const iframe = document.createElement("iframe");
+      iframe.width = "100%";
+      iframe.height = "100%";
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+      iframe.frameBorder = "0";
+      iframe.allow = "autoplay; encrypted-media";
+      iframe.allowFullscreen = true;
+
+      // Thumbnail aur button hide karo
+      const thumb = card.querySelector('.thumbnail');
+      const playBtn = card.querySelector('.play-button');
+      if (thumb) thumb.style.display = 'none';
+      if (playBtn) playBtn.style.display = 'none';
+
+      card.appendChild(iframe);
+    });
+  });
+</script>
+
+
+
+ <!-- Main Footer -->
+  <footer class="netflix-footer">
+    <div class="footer-container">
+      <p class="footer-top-text">Questions? Call <a href="#">000-800-919-1694</a></p>
+
+      <div class="footer-links">
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Speed Test</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Help Centre</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Cookie Preferences</a></li>
+          <li><a href="#">Legal Notices</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Ways to Watch</a></li>
+          <li><a href="#">Corporate Information</a></li>
+          <li><a href="#">Only on Netflix</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Media Centre</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-lang">
+        <select>
+          <option value="en">🌐 English</option>
+          <option value="hi">🌐 हिन्दी</option>
+        </select>
+      </div>
+
+      <p class="footer-bottom-text">Netflix India</p>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+</body>
+
+</html>

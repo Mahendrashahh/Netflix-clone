@@ -56,11 +56,33 @@
 
             <div>
 
-                <input type="text" class="btn btn-red" placeholder="Email Address" />
-                <button class="btn btn-red-em">Get Started <img src="gratter.svg" alt=""></button>
+                <input type="text" class="btn btn-red" id="emailInput" placeholder="Email Address" />
+                <button class="btn btn-red-em" id="getStartedBtn">Get Started
+                     <img src="gratter.svg" alt="">
+                </button>
 
 
             </div>
+             <script>
+    // Make Get Started button alive
+    document.addEventListener('DOMContentLoaded', function() {
+      const emailInput = document.getElementById('emailInput');
+      const getStartedBtn = document.getElementById('getStartedBtn');
+      getStartedBtn.addEventListener('click', function() {
+        const email = emailInput.value;
+        if (email.trim() !== "") {
+          window.location.href = "redirect.html";
+        } else {
+          alert("Please enter your email.");
+        }
+      });
+      emailInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          getStartedBtn.click();
+        }
+      });
+    });
+  </script>
 
         </div>
         <!-- trending -->
@@ -182,10 +204,31 @@
             <span>Ready to watch? Enter your email to create or restart your membership.</span>
             <div>
 
-                <input type="text" class="downbutton1" placeholder="Email Address" />
-                <button class="downbutton2">Get Started <img src="gratter.svg" alt=""></button>
+                <input type="text" class="downbutton1" id="downbutton1" placeholder="Email Address" />
+<button class="downbutton2" id="downbutton2">Get Started <img src="gratter.svg" alt=""></button>
 
             </div>
+            <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const downbutton1 = document.getElementById('downbutton1');
+    const downbutton2 = document.getElementById('downbutton2');
+    downbutton2.addEventListener('click', function() {
+      const email = downbutton1.value;
+      if (email.trim() !== "") {
+        window.location.href = "redirect.html";
+      } else {
+        alert("Please enter your email.");
+      }
+    });
+    downbutton1.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        downbutton2.click();
+      }
+    });
+  });
+</script>
+ 
+            
         </div> <!---i/o section ended-->
 
         <!---footer section started-->
