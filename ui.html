@@ -2,6 +2,34 @@
 <html lang="en">
 
 <head>
+    <style>
+    @media (max-width: 786px) {
+      .video-controls {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+      }
+      .video-control-btn {
+        background: rgba(0,0,0,0.7);
+        border: none;
+        color: #fff;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      .video-control-btn:active {
+        background: #e50914;
+      }
+    }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-netflix</title>
@@ -462,31 +490,65 @@
 <!-- बाकी का पूरा HTML content -->
 
 <script>
-  // Sabhi video cards pr apply hoga
+  // Add video controls (fullscreen, speaker) on mobile when video is playing
+  function isMobile() {
+    return window.innerWidth <= 786;
+  }
+
   document.querySelectorAll('.video-card').forEach(function (card) {
     const playBtn = card.querySelector('.play-button');
     playBtn.addEventListener('click', function (e) {
       e.stopPropagation();
-
-      // Agar already iframe hai, to return
       if (card.querySelector('iframe')) return;
-
       const videoId = card.getAttribute('data-video-id');
       const iframe = document.createElement("iframe");
       iframe.width = "100%";
       iframe.height = "100%";
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&enablejsapi=1`;
       iframe.frameBorder = "0";
-      iframe.allow = "autoplay; encrypted-media";
+      iframe.allow = "autoplay; encrypted-media; fullscreen";
       iframe.allowFullscreen = true;
-
-      // Thumbnail aur button hide karo
       const thumb = card.querySelector('.thumbnail');
-      const playBtn = card.querySelector('.play-button');
       if (thumb) thumb.style.display = 'none';
       if (playBtn) playBtn.style.display = 'none';
-
       card.appendChild(iframe);
+
+      // Add controls only on mobile
+      if (isMobile()) {
+        let controls = document.createElement('div');
+        controls.className = 'video-controls';
+        // Fullscreen button
+        let fsBtn = document.createElement('button');
+        fsBtn.className = 'video-control-btn';
+        fsBtn.title = 'Fullscreen';
+        fsBtn.innerHTML = '<svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h6M4 4v6M20 20h-6M20 20v-6"/></svg>';
+        fsBtn.onclick = function() {
+          if (iframe.requestFullscreen) iframe.requestFullscreen();
+          else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+          else if (iframe.msRequestFullscreen) iframe.msRequestFullscreen();
+        };
+        // Speaker (mute/unmute) button
+        let speakerBtn = document.createElement('button');
+        speakerBtn.className = 'video-control-btn';
+        speakerBtn.title = 'Mute/Unmute';
+        let muted = true;
+        speakerBtn.innerHTML = '<svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/></svg>';
+        speakerBtn.onclick = function() {
+          // Use postMessage to control YouTube iframe
+          muted = !muted;
+          speakerBtn.innerHTML = muted
+            ? '<svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/></svg>'
+            : '<svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15" stroke="red" stroke-width="2"/></svg>';
+          iframe.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: muted ? 'mute' : 'unMute',
+            args: []
+          }), '*');
+        };
+        controls.appendChild(fsBtn);
+        controls.appendChild(speakerBtn);
+        card.appendChild(controls);
+      }
     });
   });
 </script>
