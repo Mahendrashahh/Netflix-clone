@@ -127,6 +127,7 @@ nav button {
     overflow: auto;
     gap: 20px;
     padding: 20px 10px;
+    scrollbar-width: none;
 }
 
 
@@ -137,7 +138,7 @@ nav button {
     overflow:auto;
     padding: 20px 30px;
     position: relative;
-
+scrollbar-width: none;
     width: 80%;
     margin-left: 100px;
 
