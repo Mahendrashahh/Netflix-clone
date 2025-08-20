@@ -1,4 +1,5 @@
 @media (max-width: 786px) {
+   
     .navbar {
         padding: 0 10px;
         height: 56px;
@@ -74,6 +75,7 @@
         overflow-x: auto;
         margin-bottom: 40px;
         margin-left: 20px;
+        
     }
 
     .video-card {
@@ -362,6 +364,7 @@ body {
     gap: 30px;
     overflow-x: auto;
     margin-bottom: 100px;
+    scrollbar-width: none;
 }
 
 
